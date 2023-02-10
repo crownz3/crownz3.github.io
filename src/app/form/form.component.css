@@ -1,0 +1,343 @@
+.master-parent{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flexParent{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.main-complaint{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* padding: 12px; */
+    width: 90%;
+    margin-top: 12px;
+    margin-bottom: 24px;
+    box-shadow: var(--no-shadow);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.m-header{
+    padding: 12px;
+    background-color: var(--secondnary-color);
+    color: var(--text-color);
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+
+
+.m-footer{
+    padding: 8px;
+    background-color: var(--secondnary-color);
+    color: var(--text-color);
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+}
+
+textarea:focus{
+    outline: none;
+    border: 4px solid var(--primary-color);
+    border-radius: 12px;
+    background-color: rgb(255, 255, 255);
+
+}
+
+textarea{
+    width: 100%;
+    height: 200px;
+    max-height: 300px;
+    padding: 12px;
+    border: none;
+    /* border: 1px solid var(--primary-color); */
+    color: var(--text-color);
+    letter-spacing: 0.6px;
+    font-weight: 600;
+    transition: 0.2s;
+    background-color: rgb(244, 249, 253);
+    line-height: 20px;
+}
+
+.parent{
+    width: 90%;
+    margin-bottom: 44px;
+}
+
+.main-card{
+    background-color: var(--body-color);
+    box-shadow: var(--btn-shadow);
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+    padding: 6px;
+}
+
+.header{
+    background-color: var(--secondnary-color);
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text-color);
+}
+
+
+.question-area{
+    padding: 6px;
+    letter-spacing: 1px;
+    color: var(--text-color);
+    font-weight: 600;
+    
+}
+
+.option-area{
+    background-color: var(--secondnary-color);
+    padding: 0px 16px ; 
+    border-radius: var(--radius);
+}
+
+.footer{
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    display: flex;
+    justify-content: center;
+}
+
+.underline{
+    border-bottom: 1px solid var(--text-color);
+    padding-bottom: 2px;
+}
+
+.interData{
+        font-weight: 700;
+}
+
+.optionDirection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--text-color);
+    padding: 5px;
+}
+
+.text-area{
+    display: flex;
+    justify-content: center;
+}
+
+.radio-area{
+    display: flex;
+    justify-content: center;
+}
+
+.checkbox-area{
+    display: flex;
+    justify-content: center;
+}
+
+.text{
+    font-size: 14px;
+}
+
+.cardIndex{
+        
+        height:40px ;
+        width: 160px;
+        background-color: var(--body-color);
+        box-shadow: var(--btn-shadow);
+        border-top-right-radius: 60px;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding: 8px;
+        color: var(--text-color);
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        animation: mymove 2s infinite;
+ }
+
+ /* button Css */
+.btns {
+    border-radius: 12px;
+    border: none;
+    padding: 6px;
+    box-shadow: var(--btn-shadow);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--trans-03);  
+    font-family: "poppins" ;
+    font-weight: 600;
+    outline: none;
+}
+
+.btns:disabled {
+   
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.btns:disabled:active{
+    color: rgb(212, 212, 212);
+    outline: 1px solid rgb(255, 0, 0);
+}
+
+.btns:hover {
+    content: "verified Profile";
+    color: var(--primary-color);
+}
+
+/*  */
+
+
+.templateParent{
+    width: 90%;
+    background:var(--secondnary-color);
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: var(--btn-shadow);
+    position: absolute;
+    top: 450px;
+}
+.templateParent  p {
+    margin: 0;
+}
+.inner-parent{
+    width: 95%;
+    height: 150px;
+    border: 5px solid var(--primary-color);
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+    letter-spacing: 2px;
+}
+
+
+
+ @keyframes mymove {
+    0% {border-top: 1px solid var(--secondnary-color);}
+    50% {border-top:1px solid var(--primary-color); }
+    100% {border-top: 1px solid var(--secondnary-color);}
+
+  }
+
+  @media screen and (max-width:600px){
+
+    .cardIndex{
+        height: 25px;
+        width: 100px;
+        font-size: 0.5rem;
+        font-weight: 700;
+        letter-spacing: .5px;
+    }
+
+    .header{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .radio-area{
+        flex-direction: column;
+    }
+
+    .flexParent{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text-area{
+        flex-direction: column;
+
+    }
+    .checkbox-area{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .templateParent{
+        position: absolute;
+        top: 370px !important;
+        height: 100px !important;
+    }
+   
+   .inner-parent{
+        height: 75px !important;
+        border: 2px solid var(--primary-color) !important;
+        font-size: 12px !important;
+        border-radius: 12px !important;
+    }
+
+    .text{
+        font-size: 10px;
+    }
+
+    :host ::ng-deep .mat-radio-container{
+        height: 10px;
+        width: 10px;
+      }
+      :host ::ng-deep .mat-radio-outer-circle{
+        height: 10px;
+        width: 10px;
+      }
+      :host ::ng-deep .mat-radio-inner-circle{
+        height: 10px;
+        width: 10px;
+      }
+      
+      :host ::ng-deep .mat-radio-button .mat-radio-ripple{
+        height: 20px; /*double of your required circle radius*/
+        width: 20px;  /*double of your required circle radius*/
+        left: calc(50% - 10px); /*'10px'-same as your required circle radius*/
+        top: calc(50% - 10px); /*'10px'-same as your required circle radius*/
+      }
+
+      ::ng-deep .mat-checkbox-inner-container{
+        width: 10px !important;
+        height: 10px !important;
+    }
+
+    :host ::ng-deep .mat-checkbox .mat-checkbox-ripple{
+        height: 20px; /*double of your required circle radius*/
+        width: 20px;  /*double of your required circle radius*/
+        left: calc(50% - 10px); /*'10px'-same as your required circle radius*/
+        top: calc(50% - 10px); /*'10px'-same as your required circle radius*/
+      }
+
+      .cardIndex{
+        font-size: 8px;
+      }
+  }
+
+
+
+
+

@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html, body { height: 100%; }
+body {  font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-color:#e4e9f7;
+    --sidebar-color:#fff;
+    --primary-color:#4682b4;
+    --primary-color-light:#c7e3fc;
+    --toggle-color:#ddd;
+    --text-color:#707070;
+    --secondnary-color:#ade8ff;
+    --secondnary-text:#707070;;
+    --hov:rgb(210, 252, 255);
+    --btn-shadow:5px 5px 7px #b1b1b1,
+    -4px -4px 7px  #ffffff;
+    --no-shadow:2px 2px 2px #b1b1b1,
+    -2px -2px 4px  #ffffff;
+    --scroll:rgb(168, 168, 168);
+    /* Transition */
+    --trans-01:all 0.1s ease;
+    --trans-02:all 0.2s ease;
+    --trans-03:all 0.3s ease;
+    --trans-04:all 0.4s ease;
+    --trans-05:all 0.5s ease;
+
+
+    --padding:12px;
+    --radius:8px;
+    --curve-radius:0px 24px;
+}
+
+.dark {
+    --body-color:#18191A;
+    --sidebar-color:#242526;
+    --primary-color:#3A3B3C;
+    --primary-color-light:#3A3B3C;
+    --toggle-color:#FFF;
+    --text-color:#c2e3ff;
+    --hov:rgb(255, 255, 255);
+    --secondnary-text:#daedff;
+    --secondnary-color:#FFF;
+    --btn-shadow:5px 5px 7px #474747,
+    -5px -5px 7px #414141;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar:hover{
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--text-color); 
+    border-radius: var(--radius);
+
+}
+   
+::-webkit-scrollbar-thumb {
+    background:var(--scroll); 
+    border-radius:var(--radius);
+    
+}
+

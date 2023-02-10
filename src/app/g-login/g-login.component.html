@@ -1,0 +1,34 @@
+<!-- <div>
+    <div class="parent">
+        <div class="container"><b>Welcome to Google Login Page Service</b> </div>
+        <div class="container">Name:{{ userInfo?.info?.name }}</div>
+        <div class="container">Email:{{ userInfo?.info?.email }}</div>
+        <div class="container"><img src="{{userInfo?.info?.picture}}" alt="Image"></div>
+        <div class="container">
+          <button (click)="logOut()">Logout From Google</button>
+        </div>
+        <button class="qrCode" routerLink="/admin">QrCode</button>
+    </div>
+  </div>
+<h2 class="goo">Google</h2> -->
+<div class="body">
+  <div class="parent">
+    <div class="info">
+      <div  id="head" class="container header"><b>Welcome to Google Login Page Service</b> </div>
+      <div class="container">Name:{{ userInfo?.info?.name }}</div>
+      <div class="container">Email:{{ userInfo?.info?.email }}</div>
+    </div>
+    <div class="image">
+      <div ><img src="{{userInfo?.info?.picture}}" class="img" alt="Image"></div>
+
+    </div>
+</div>
+<div class="goo">Oauth 2.0</div>
+<div class="buttons">
+  <button (click)="logOut()">Logout From Google</button>
+  <button routerLink="/admin">Enter to QrCode project</button>
+
+</div>
+</div>
+
+  

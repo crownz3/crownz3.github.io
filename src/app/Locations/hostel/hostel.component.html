@@ -1,0 +1,314 @@
+<div class="overall">
+    <div class="inside-overall">
+      <div *ngIf="theForm">
+        <div class="close-btn">
+          <div class="addbtn">
+            <button mat-button style="padding: 6px;margin-right: 1rem;" [hidden]="rows.length <= 5"  [hidden]="theFormgroup===true" (click)="theNewComplaint()" class="add-btn">New Complaint</button>
+          </div>
+          <button mat-button class="cl-btn" style="padding: 2px" (click)="close()"><mat-icon>close</mat-icon>
+          </button>
+        </div>
+        <!-- <div class="NewComplaint">
+          <button class="btns "><mat-icon>add</mat-icon>New Complaint</button>
+        </div> -->
+
+        <div class="p-formgrp">
+         
+          <div class="formGrp" *ngIf="theFormgroup">
+           
+
+
+             <form>
+              
+              <div class="wrapper">
+                <div class="box">
+                  <input
+                    type="text"
+                    #reg
+                    name="regNo"
+                    id="regNo"
+                    value="{{Data[0].RegNo}}"
+                    disabled
+                  />
+                  <label for="regNo">Register Number <mat-icon class="imp">flare</mat-icon></label>
+                </div>
+                <div class="box">
+                  <input
+                    type="text"
+                    #studName
+                    name="sname"
+                    id="sname"
+                    value="{{Data[0].name}}"
+                    disabled
+                  />
+                  <label for="sname">Student Name<mat-icon class="imp">flare</mat-icon></label>
+                </div>
+              </div>
+  
+              <div class="wrapper">
+                <div class="box">
+                  <input
+                    type="text"
+                    #dept
+                    name="dept"
+                    id="dept"
+                    required
+                    value="{{Data[0].department}}"
+                    disabled
+
+                  />
+                  <label for="dept">Department<mat-icon class="imp">flare</mat-icon></label>
+                </div>
+                <div class="box">
+                  <input
+                    type="text"
+                    #crs
+                    name="course"
+                    id="sourse"
+                    required
+                    value="{{Data[0].course}}"
+                    disabled
+                  />
+                  <label for="course">Course<mat-icon class="imp">flare</mat-icon></label>
+                </div>
+              </div>
+  
+              <div class="wrapper">
+                <div class="box">
+                  <input
+                    type="text"
+                    #cNo
+                    (keyup)="obj.cNo = cNo.value"
+                    name="cNo"
+                    id="cNo"
+                    required
+                  />
+                  <label for="cNo">Contact No</label>
+                </div>
+                <div class="box">
+                  <input
+                    type="text"
+                    #mail
+                    (keyup)="obj.mail = mail.value"
+                    name="mail"
+                    id="mail"
+                    required
+                  />
+                  <label for="mail">Mail Id</label>
+                </div>
+              </div>
+  
+              <div class="wrapper">
+                <div class="box">
+                  <input
+                    style="margin-bottom: 25px"
+                    type="text"
+                    #issue
+                    (keyup)="obj.Complaint = issue.value"
+                    name="issue"
+                    id="issue"
+                    required
+                  />
+                  <label for="issue">Issue<mat-icon class="imp">flare</mat-icon></label>
+                </div>
+                <div class="box">
+                  <input
+                    type="text"
+                    #place
+                    (keyup)="obj.Place = place.value"
+                    name="place"
+                    id="place"
+                    required
+                  />
+                  <label for="place">Place<mat-icon class="imp">flare</mat-icon></label>
+                </div>
+              </div>
+  
+              <div class="wrapper">
+                <div class="box">
+                  <textarea
+                    id="mes"
+                    #mes
+                    (keyup)="obj.mes = mes.value"
+                    required
+                  ></textarea>
+                  <label for="mes">Say Something....</label>
+                </div>
+              </div>
+              <div style="margin-top: 20px;" class="bottomForm">
+                <button mat-button type="button" class="btns"  [disabled]="obj.Complaint === '' || obj.Place === ''"  (click)="submit()">Add Complaint</button>
+              </div>
+     
+            </form> 
+
+          </div>
+            
+          <!-- <div *ngIf="theComplain"  class="cards">
+            <div class="inside-card">
+                <form>
+                  <div class="wrapper">
+                    <div class="box">
+                      <input
+                        type="text"
+                        #reg
+                        (keyup)="obj.regNo = reg.value"
+                        name="regNo"
+                        id="regNo"
+                        required
+                        value={{obj.sName}}
+                        disabled = "disabled"
+                      />
+                      <label for="regNo">Student Name</label>
+                    </div>
+                    <div class="box">
+                      <input
+                        type="text"
+                        #studName
+                        (keyup)="obj.sName = studName.value"
+                        name="sname"
+                        id="sname"
+                        required
+                        value={{obj.regNo}}
+                        disabled = "disabled"
+  
+                      />
+                      <label for="sname">Register Number</label>
+                    </div>
+                  </div>
+  
+                  <div class="wrapper">
+                    <div class="box">
+                      <input
+                        type="text"
+                        #reg
+                        (keyup)="obj.regNo = reg.value"
+                        name="regNo"
+                        id="regNo"
+                        required
+                        value={{obj.issue}}
+                        disabled = "disabled"
+                      />
+                      <label for="regNo">Complaint</label>
+                    </div>
+                    <div class="box">
+                      <input
+                        type="text"
+                        #studName
+                        (keyup)="obj.sName = studName.value"
+                        name="sname"
+                        id="sname"
+                        required
+                        value={{obj.place}}
+                        disabled = "disabled"
+                      />
+                      <label for="sname">Location</label>
+                    </div>
+                  </div>
+  
+                  <div class="wrapper">
+                    <div class="box">
+                      <input
+                        type="text"
+                        #reg
+                        (keyup)="obj.regNo = reg.value"
+                        name="regNo"
+                        id="regNo"
+                        required
+                        value="-"
+                        disabled = "disabled"
+                      />
+                      <label for="regNo">Issue Date</label>
+                    </div>
+                    <div class="box">
+                      <input
+                        type="text"
+                        #studName
+                        (keyup)="obj.sName = studName.value"
+                        name="sname"
+                        id="sname"
+                        required
+                        value="-"
+                        disabled = "disabled"
+  
+                      />
+                      <label for="sname">Complaint Number</label>
+                    </div>
+                  </div>
+                </form>
+            </div>
+          </div> -->
+        </div>
+  
+        <!-- <div class="newComplain" *ngIf="theNewComplain">
+          <form>
+            <div class="wrapper">
+              <div class="box">
+                <input
+                  type="text"
+                  #reg
+                  (keyup)="obj.RegNo = reg.value"
+                  name="regNo"
+                  id="regNo"
+                  required
+                />  
+                <label for="regNo">Register Number*</label>
+              </div>
+              <div class="box">
+                <input
+                  type="text"
+                  #studName
+                  (keyup)="obj.Name = studName.value"
+                  name="sname"
+                  id="sname"
+                  required
+                />
+                <label for="sname">Student Name*</label>
+              </div>
+            </div>
+          </form>
+        </div> -->
+    
+      </div>
+  
+      <div class="master" *ngIf="!theForm">
+        <div class="big-parent">
+          <div class="parent">
+            <img
+              style="height: 50px; width: 50px"
+              src="../../../assets/M.jpg"
+              alt="Bad Image"
+            />
+            <div class="child">
+              <div style="font-weight: bold">Ibrahim</div>
+              <div style="color: grey">951818104017</div>
+            </div>
+          </div>
+          <div>
+            <button mat-button (click)="toggle()" class="btns">Add Complaint</button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="table-view">
+        <table class="content-table">
+          
+          
+            <th>{{serialNo}}</th>
+            <th *ngFor="let column of headers">
+              {{ column }}
+            </th>
+          
+          <tr *ngFor="let row of rows ;let i = index">
+            <td>{{i+1}}</td>
+            <td *ngFor="let column of headers; let i = index">
+               {{ row[column]}}
+            </td>
+          </tr>
+        </table>
+    
+      </div>
+    </div>
+
+    
+  </div>
+  

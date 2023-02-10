@@ -1,0 +1,374 @@
+/* .example-card {
+  max-width: 500px;
+  margin: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,.3);
+  border-left: 2px solid rgba(255, 255, 255, .3);
+  border-top: 2px solid rgba(255, 255, 255, .3);
+  border-radius:24px;
+}
+
+img{
+  border-radius: 24px;
+}
+
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,600;0,700;1,900&display=swap');
+
+
+ .table-view::-webkit-scrollbar {
+  width: 4px;
+  
+}
+
+.table-view::-webkit-scrollbar-track {
+  background: var(--text-color); 
+  border-radius: var(--radius);
+}
+ 
+.table-view::-webkit-scrollbar-thumb {
+  background:var(--secondnary-color); 
+  border-radius:var(--radius);
+}
+
+.inside-overall::-webkit-scrollbar {
+  width: 10px;
+  
+}
+
+.inside-overall::-webkit-scrollbar-track {
+  background: var(--text-color); 
+  border-radius: var(--radius);
+}
+ 
+.inside-overall::-webkit-scrollbar-thumb {
+  background:var(--secondnary-color); 
+  border-radius:var(--radius);
+}
+
+
+.master{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top:2% ;
+}
+
+.big-parent{
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.parent{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.parent > img {
+  border-radius: 5px 20px 5px;
+  margin-right: 10%;
+  box-shadow: var(--btn-shadow);
+}
+
+.btns{
+  border-radius: 12px;
+  border: none;
+  padding: 6px;
+  box-shadow: var(--btn-shadow);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: var(--trans-03);  
+  font-family: "poppins" ;
+  font-weight: 600;
+  outline: none;
+}
+
+.btns:hover {
+  content: "verified Profile";
+  color: var(--primary-color);
+}
+
+.close-btn{
+  margin: 10px;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2.5rem;
+}
+
+
+.cl-btn:hover{
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.cl-btn{
+  background: none;
+  border-radius: 20%;
+  box-shadow: var(--btn-shadow);
+  border: none;
+  color: var(--text-color);
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.addbtn{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top:0;
+  color: var(--text-color);
+  font-family: "poppins" ;
+}
+
+.add-btn:hover{
+  color:var(--primary-color);
+  cursor: pointer;
+
+}
+
+.add-btn:disabled{
+  color:var(--text-color);
+  cursor: default;
+  
+}
+
+
+.btns:disabled{
+  color: var(--text-color);
+  cursor: default;
+}
+
+.add-btn{
+  background: none;
+  border-radius:var(--radius);
+  border: none;
+  box-shadow: var(--btn-shadow);
+  transition: 0.5s;
+  margin-top: 0;
+  font-weight: 600;
+  color: var(--text-color);
+
+}
+
+.child{
+  text-align: left;
+}
+
+ .overall{
+  height: 89%;
+  width: 100%;
+  display: flex;
+ }
+
+ .inside-overall{
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+ }
+
+
+ .table-view{
+  width: 100%;
+  height: 35%;
+  overflow: auto;
+  margin-top: 4%;
+  display: flex;
+  justify-content: center;
+ }
+ 
+ .content-table{
+  overflow: scroll;
+  border-collapse: collapse;
+  margin: 1rem 1rem;
+  background-color:var( --body-color);
+  font-size: 0.9em;
+  font-weight: 700;
+  box-shadow: var(--btn-shadow);
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  width: 90%;
+  margin-bottom: 0px;
+}
+
+
+
+ .content-table th,
+ .content-table td {
+  padding: 12px 15px;
+  color:var(--text-color);
+  transition: 0.3s;
+  text-align: center;
+ }
+
+ .content-table th{
+  border-bottom:1px solid var(--primary-color) ;
+  color:var(--primary-color);
+
+ }
+
+ th{
+  position: sticky;
+  top: 0;
+  left:0;
+  inset-inline-start: 0;
+ }
+ 
+ .content-table td:hover {
+  color: var(--primary-color);
+ }
+
+
+ .content-table  tr {
+    border-bottom:0.5px solid rgb(216, 216, 216) ;
+    transition: 0.5s;
+ }
+
+ .content-table  tr:hover{
+  background-color: var(--secondnary-color);
+  border-bottom:0.5px solid rgb(255, 255, 255) ;
+
+ }
+
+ .p-formgrp{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+ }
+
+.formGrp{
+  width: 90%;
+  background-color: var( --body-color);
+  box-shadow: var(--btn-shadow);
+  padding: 2rem 2rem 2rem 2rem;
+  border-radius: var(--radius);
+}
+
+.wrapper{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 30px;
+}
+
+
+.wrapper .box {
+  width: 100%;
+  position: relative;
+  padding: 0.2rem;
+}
+
+
+
+.wrapper .box input {
+  width: 100%;
+  outline: none;
+  border: none;
+  background: transparent;
+  border-bottom: 0.5px dashed var(--text-color);
+  color: var(--primary-color);
+  transition: 0.5s;
+  position: relative;
+  margin-top:2rem ;
+}
+
+.wrapperr .box input{
+  width: 70%;
+  outline: none;
+  border: none;
+  background: transparent;
+  border-bottom: 0.5px dashed var(--text-color);
+  color: var(--primary-color);
+  transition: 0.5s;
+  position: relative;
+}
+
+.wrapper .box input:active{
+  background-color: var(--secondnary-color);
+  border-radius: 4rem;
+  padding: 10px 20px;
+  border-radius: 4rem;
+}
+
+.wrapper .box input:disabled{
+  padding: 0px;
+  background-color: var( --body-color);
+}
+
+.wrapper .box textarea {
+  width: 100%;
+  outline: none;
+  border: none;
+  background: transparent;
+  border-bottom: 0.5px dashed var(--text-color);
+  color: var(--primary-color);
+  transition: 0.5s;
+  position: relative;
+  margin-top:2rem ;
+
+}
+
+.wrapper .box input:focus{
+  padding: 10px 20px;
+  border-radius: 4rem;
+}
+
+.wrapper .box label{
+ position: absolute;
+ color: var(--primary-color);
+ top: 0;
+ left: 0;
+}
+
+.bottomForm{
+  display: flex;
+  justify-content: center;
+}
+
+.NewComplaint{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+form > button{
+  margin-top: 1.5rem;
+}
+
+form  mat-icon  {
+  color: red;
+  transform: scale(0.4);
+}
+
+.cards{
+  width: 90%;
+  height: 18rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 4% ;
+  padding: 1rem;
+}
+
+.inside-card{
+  width:100%;
+  background-color: var( --body-color);
+  box-shadow: var(--btn-shadow);
+  padding: 0.8rem 2rem 2rem 2rem;
+  border-radius: 1rem;
+}
+
+@media only screen and (max-width: 550px) {
+  .table-view{
+    margin-bottom: 5rem;
+  }
+}

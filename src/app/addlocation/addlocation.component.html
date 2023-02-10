@@ -1,0 +1,322 @@
+<!-- {{ this.theForm.value | json }} -->
+
+<div class="masterParent">
+  <div class="headview">
+    <div class="text"></div>
+    <div>
+      <button class="btns" mat-button (click)="addLocation()" *ngIf="!showAdd">
+        Add Location
+      </button>
+    </div>
+  </div>
+  <div class="headview">
+    <div class="text"></div>
+    <div>
+      <button class="btns" mat-button (click)="close()" *ngIf="!hideClose">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="table">
+    <section class="table-view">
+      <div *ngIf="dataSource.data.length; else noData" class="col-12" >
+        <table mat-table [dataSource]="dataSource" >
+          <ng-container matColumnDef="Sno">
+            <th mat-header-cell *matHeaderCellDef>SNo</th>
+            <td mat-cell *matCellDef="let element" >
+              {{ dataSource.data.indexOf(element) + 1 }}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Location">
+            <th mat-header-cell *matHeaderCellDef>Location</th>
+            <td mat-cell *matCellDef="let element">{{ element.location }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Landmark">
+            <th mat-header-cell *matHeaderCellDef>landmark</th>
+            <td mat-cell *matCellDef="let element">{{ element.landmark }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="Operations">
+            <th mat-header-cell *matHeaderCellDef>Operations</th>
+            <td mat-cell *matCellDef="let element" class="">
+              <button (click)="generateForm()" class="gen" mat-button>Generate Qr</button>
+              <button (click)="editForm()" class="gen" mat-button>Edit</button>
+              <button (click)="viewForm()" class="gen" mat-button>View</button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+        <mat-paginator
+          [pageSizeOptions]="[5, 10]"
+          showFirstLastButtons
+        >
+        </mat-paginator>
+      </div>
+    </section>
+
+    <ng-template #noData>
+      <div class="ndf col-12">
+        <div class="ndf-icon"><i class="material-icons">&#xe252;</i></div>
+        <div class="ndf-inside" style="text-align: center">
+          <div>&#5176;No Data Found&#5171;</div>
+          <div><p>Pleace Add Location to Complaint</p></div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+
+  <!-- Add Location Card -->
+  <div class="locationCard mb-5">
+    <div [formGroup]="theForm" class="addLocation" *ngIf="addlocation">
+      <div class="form-group"  class="col-12 p-4">
+        <div
+          class="field-container "
+        >
+          <mat-form-field appearance="outline" style="padding-bottom: 0px">
+            <mat-label>Location</mat-label>
+            <input
+              matInput
+              placeholder="ex:hostel"
+              required
+              formControlName="location"
+            />
+            
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Landmark</mat-label>
+            <input
+              matInput
+              placeholder="ex:near canteen"
+              required
+              formControlName="landmark"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Latitude</mat-label>
+            <input matInput placeholder="latitude" formControlName="latitude" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Longitude</mat-label>
+            <input
+              matInput
+              placeholder="longitude"
+              formControlName="longitude"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Remarks</mat-label>
+            <input matInput placeholder="remarks" formControlName="remarks" />
+          </mat-form-field>
+          <mat-form-field appearance="outline" required>
+            <mat-label>Status</mat-label>
+            <mat-select [(value)]="locationSelected" formControlName="status">
+              <mat-option value="Active">Active</mat-option>
+              <mat-option value="Inactive">Inactive</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        
+      </div>
+      <span class="mb-3 bg-danger d-flex justify-content-center text-light"
+        style="letter-spacing: 1px;"
+        *ngIf="
+          theForm.get('location')?.hasError('required') &&
+          theForm.get('location')?.touched ||  theForm.get('landmark')?.hasError('required') &&
+          theForm.get('landmark')?.touched &&  theForm.get('status')?.hasError('required') ||
+          theForm.get('status')?.touched
+        "
+        >*Please fill all required fields to enable Add Question button</span
+      >
+    </div>
+    
+  </div>
+
+  <!-- Add Question Card -->
+  
+
+  <div class="local">
+    <form *ngIf="addQuestion" [formGroup]="theForm" >
+      <div formArrayName="questions"  >
+        <div
+          class="questionCard mb-5"
+          *ngFor="
+            let questionControl of questions().controls;
+            let questionIndex = index
+          "
+        >
+        <div style="width:90%">
+         <div class="cardIndex">Question No: {{ questionIndex + 1}}</div>
+
+          <div class="addQuestion" [formGroupName]="questionIndex">
+            <div class="d-flex mb-4 justify-content-between">
+              <div>
+                <mat-form-field
+                  [ngStyle]="{ width: styleExp ? '250px' : '550px' }"
+                  appearance="standard"
+                  class="removePadding"
+                  [style.height.px]="12"
+                >
+                  <mat-label>Add Question</mat-label>
+                  <input
+                    matInput
+                    placeholder="ex:what is your Favorite Smartphone?"
+                    required
+                    formControlName="question"
+                  />
+                  <span
+                    class="text-dark rounded"
+                    *ngIf="
+                      theForm.get('questions')?.status === 'Invalid' &&
+                      theForm.get('questions')?.touched
+                    "
+                    >*Required Field</span
+                  >
+                </mat-form-field>
+              </div>
+              <div class="questionDelBtnDiv">
+                <button
+                  [hidden]="questionIndex === 0"
+                  (click)="removeQuestions(questionIndex)"
+                  mat-button
+                  class="questionDelBtn"
+                >
+                  <mat-icon>close</mat-icon>
+                </button>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <mat-form-field
+                appearance="outline"
+                required
+                [style.width.px]="140"
+                [style.padding-bottom.px]="10.5"
+              >
+                <mat-label>Option type</mat-label>
+                <mat-select
+                  formControlName="selectOption"
+                  (selectionChange)="optionButtonShow(questionIndex)"
+                  id="select"
+                >
+                  <mat-option value="text">Text</mat-option>
+                  <mat-option value="radio">Radio</mat-option>
+                  <mat-option value="checkbox">Checkbox</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <!-- Add Option Button -->
+
+              <div>
+                <button
+                  mat-button
+                  class="btns"
+                  (click)="addQuestionOption(questionIndex)"
+                  [hidden]="btnShow(questionIndex)"
+                >
+                  Add option
+                </button>
+              </div>
+            </div>
+
+            <!-- Radio Option Card -->
+
+            <div formArrayName="options" [hidden]="btnShow(questionIndex)">
+              <div
+                *ngFor="
+                  let optionControl of questionsOption(questionIndex).controls;
+                  let optionIndex = index
+                "
+              >
+                <div class="optionCard" [formGroupName]="optionIndex">
+                  <div class="checkboxCard">
+                    <div>
+                      <div>
+                        <div class="txt">
+                          <div>Option {{ optionIndex + 1 }}</div>
+                          <div>
+                            <button
+                            [hidden]="optionIndex === 0"
+                              (click)="
+                                removeQuestionOption(questionIndex, optionIndex)
+                              "
+                              class="optclosebtn"
+                            >
+                              <mat-icon>close</mat-icon>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <mat-form-field
+                          appearance="standard"
+                          class="removePadding open"
+                          [style.width.%]="100"
+                          [style.padding-bottom.px]="0"
+                        >
+                          <mat-label>Add Option</mat-label>
+                          <input
+                            matInput
+                            placeholder="ex:Apple 12 pro?"
+                            required
+                            formControlName="opt"
+                          />
+                        </mat-form-field>
+                      </div>
+
+                      <span class="mb-3 bg-danger d-flex justify-content-center text-light"
+                      style="letter-spacing: 1px;"
+                      *ngIf="
+                        theForm.get('questions')?.hasError('required') &&
+                        theForm.get('questions')?.touched
+                      "
+            >*Please fill all required fields to enable Add Question button</span
+          >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- <button (click)="noooo()">button</button> -->
+
+    <div class="lol d-flex my-4 justify-content-end" *ngIf="addlocation">
+      <button
+        class="btns"
+        mat-button
+        [disabled]="!theForm.valid"
+        (click)="addQuestions()"
+      >
+        Add Question
+      </button>
+    </div>
+  </div>
+
+  <div class="d-flex mt-3 justify-content-center mb-2" *ngIf="addlocation">
+    <button
+      class="btns"
+      mat-button
+      [disabled]="(!theForm.valid) || (theForm.value.questions.length === 0)"
+      (click)="submit()"
+    >
+      Submit
+    </button>
+    
+  </div>
+</div>

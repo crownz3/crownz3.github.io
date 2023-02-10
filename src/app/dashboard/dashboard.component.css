@@ -1,0 +1,51 @@
+.Parent{
+    overflow: auto;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 24px;
+}
+
+.complaints-card{
+    border-radius: var(--radius);
+    background-color: var(--body-color);
+    box-shadow: var(--btn-shadow);
+    padding: 24px;
+    width: 30.33%;
+    border-right: 50px solid var(--primary-color);
+    border-left: 20px solid var( --primary-color-light);
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-left{
+    width: 60%;
+}
+
+.card-right{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-icon{
+    font-size:100px;
+}
+
+h1{
+    margin-bottom: 0;
+    font-family: "Poppins";
+    font-size: 20px;
+
+}

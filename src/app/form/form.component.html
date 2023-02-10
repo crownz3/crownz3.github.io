@@ -1,0 +1,134 @@
+<div class="master-parent" >
+  <form class="flexParent" [formGroup]="theAnswerForm"  *ngIf="!submitted;else regards">
+
+
+
+
+    <div   
+      class="parent"
+      *ngFor="let card of theAnswerForm.controls; let i = index"
+    >
+    <div [formGroupName]="i">
+     
+        <!-- Question No -->
+        <div class="cardIndex text">Question No: {{ i + 1 }}</div>
+
+        <div class="main-card p-3">
+          <div class="header p-3">
+            <!-- Card Header -->
+            <div class="underline text">
+              Location:
+              <span class="interData text">{{ ReceivedData.location }}</span>
+            </div>
+            <div class="underline text">
+              Landmark:
+              <span class="interData text">{{ ReceivedData.landmark }}</span>
+            </div>
+          </div>
+
+          <!-- Question Area-->
+          <div class="question-area p-3">
+            <div class="text">
+              Question:
+              <span class="interData text">{{ ReceivedData.questions[i].question }}</span>
+            </div>
+          </div>
+
+          <!-- Option Area -->
+
+          <div class="option-area p-2">
+            <!-- CheckBox Option -->
+            <div
+              class="checkbox-area"
+              *ngIf="ReceivedData.questions[i].selectOption === 'checkbox'"
+            >
+              <section
+                class="optionDirection"
+                *ngFor="let checkbox of ReceivedData.questions[i].options; let c = index"
+              >
+                <mat-checkbox
+                  (change)="checkboxLoop($event, i)"
+                  class="px-2 interData text"
+                  color="primary"
+                  value="{{checkbox.opt}}"
+                  >{{ checkbox.opt }}</mat-checkbox
+                >
+              </section>
+            </div>
+
+            <!-- Radio Option -->
+            <div
+              class="radio-area"
+              *ngIf="ReceivedData.questions[i].selectOption === 'radio'"
+            >
+              <mat-radio-group class="optionDirection" formControlName="answer">
+                <mat-radio-button
+                  class="px-2 interData text"
+                  color="primary"
+                  [value]="radio.opt"
+                  *ngFor="let radio of ReceivedData.questions[i].options"
+                  >{{ radio.opt }}</mat-radio-button
+                >
+              </mat-radio-group>
+            </div>
+
+            <!-- Text Option -->
+            <div
+              class="text-area"
+              *ngIf="ReceivedData.questions[i].selectOption === 'text'"
+            >
+              <mat-form-field class="optionDirection">
+                <mat-label>Answer</mat-label>
+                <input
+                  formControlName="answer"
+                  matInput
+                  placeholder="Ex.My favorite fruit is Apple "
+                  class="text"
+                />
+              </mat-form-field>
+            </div>
+            
+          </div>
+
+          <!-- Footer For Margin or Add any Data -->
+          <div class="footer mt-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-complaint">
+      <div class="m-header">
+          Your's Complaint
+      </div>
+      <div class="text-area bg-primary col-12">
+        <textarea  (click)="footerText()" o></textarea>
+      </div>
+      <div class="m-footer" id="m-footer">  
+          Type your own complaint about this location
+      </div>
+  </div>
+  
+  </form>
+
+
+
+  <ng-template #regards>
+    <div class="templateParent">
+      
+      <div class="inner-parent">
+        <p>Thanks For Submitting </p>
+      </div>
+    </div>
+  </ng-template>
+
+  <div *ngIf="!submitted">
+    <button
+      (click)="submit()"
+      [disabled]="!theAnswerForm.valid"
+      class="btns"
+      mat-button
+    >
+      Submit
+    </button>
+  </div>
+</div>
