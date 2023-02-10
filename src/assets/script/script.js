@@ -7,7 +7,7 @@ function jsFile() {
     modeText = body.querySelector(".mode-text");
 
   toggle.addEventListener("click", () => {
-    sidebar.classList.toggle("xlose")
+    sidebar.classList.toggle("close")
 
 
   })
@@ -30,10 +30,10 @@ function jsFile() {
 
     if (screenSize) {
       sidebar.classList.remove('close')
-      sidebar.classList.add('close')
+      sidebar.classList.add('open')
     } else {
       sidebar.classList.remove('close')
-      sidebar.classList.add('close')
+      sidebar.classList.add('open')
 
     }
 
