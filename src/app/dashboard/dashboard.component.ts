@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-
-
+import { MatDialog } from '@angular/material/dialog/public-api';
+import { DashboardFooterComponent } from '../Dialogs/dashboard-footer/dashboard-footer.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
+  footerDialog(){
+  const dialogRef = this.dialog.open(DashboardFooterComponent, {
+  });
+
+  dialogRef.afterOpened().subscribe(res => {
+    console.log('The EditForm is opened');
+  })
+  }
 
 }

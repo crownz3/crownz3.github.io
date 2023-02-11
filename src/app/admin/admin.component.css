@@ -341,7 +341,7 @@
     -webkit-box-shadow: 7px 12px 30px -20px rgba(32, 114, 176, 1);
     -moz-box-shadow: 7px 12px 30px -20px rgba(32, 114, 176, 1);
     display: flex;
-    height: 80px;
+    height: 77px;
     
 }
 
@@ -390,7 +390,7 @@
 
 .content {
     padding: 2%;
-    padding-top: 4%;
+    height: 93vh;
     overflow: auto;
 }
 

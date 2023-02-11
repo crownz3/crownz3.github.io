@@ -49,3 +49,230 @@ h1{
     font-size: 20px;
 
 } */
+
+
+.masterParent{
+    height: 100%;
+    width: 100%;
+    padding: 12px;
+    /* background-color: steelblue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    padding: 18px;
+}
+
+.leftSide{
+    background-color: skyblue;
+    padding: 1%;
+    height: 100%;
+    width: 68%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.rightSide{
+    background-color: aliceblue;
+    padding: 1%;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+.leftInner{
+    height: 100%;
+    width: 29%;
+    background-color: steelblue;
+    padding: 1%;
+}
+
+.rightInner{
+    height: 100%;
+    width: 69%;
+    background-color: steelblue;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list{
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.graph{
+    width: 100%;
+    height: 49%;
+    background-color: aliceblue;
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.others{
+    width: 100%;
+    height: 49%;
+    background-color: aliceblue;
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.infoCard{
+    width: 100%;
+    height: 30%;
+    background-color: darkslategrey;
+    border-radius: var(--radius);
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cardUpper{
+    width: 100%;
+    height: 25%;
+    background-color: skyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardLower{
+    width: 100%;
+    height: 70%;
+    background-color: skyblue;
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.cardContent{
+    width: 49%;
+    height: 100%;
+    background-color: steelblue;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardIcon{
+    width: 49%;
+    height: 100%;
+    background-color: steelblue;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+
+.count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(4);
+}
+
+/* .footerPage{
+    position: absolute;
+    bottom: 0;
+
+} */
+
+@media screen and (max-width:600px) {
+    .masterParent{
+        flex-direction: column-reverse;
+        height: 150%;
+        gap: 10px;
+    }
+
+    .rightSide{
+        width: 68%;
+    }
+
+    .infoCard{
+       
+    }
+
+    .cardUpper{
+        height: 35%;
+    }
+
+    .cardLower{
+        height: 60%;
+        justify-content: space-around;
+    }
+
+    .cardContent{
+        width: 35%;
+    }
+
+    .cardIcon{
+        width: 35%;
+    }
+
+    .icon{
+            transform: scale(1.5);
+            
+    }
+
+    .count{
+        font-size: 0.8rem;
+    }
+
+    .head{
+        font-size: 1rem;
+    }
+
+    .leftSide{
+        flex-direction: column-reverse;
+        height: 200%;
+    }
+
+    .leftInner{
+        width: 140%;
+        height: 50%;
+    }
+
+    .rightInner{
+        width: 100%;
+    }
+
+    .graph{
+        width: 140%;
+    }
+    
+}
