@@ -206,11 +206,13 @@ h1{
     transform: scale(4);
 }
 
-/* .footerPage{
+.footerPage{
+    background: none;
+    border: none;
     position: absolute;
+    right: 0;
     bottom: 0;
-
-} */
+}
 
 @media screen and (max-width:600px) {
     .masterParent{
@@ -274,5 +276,7 @@ h1{
     .graph{
         width: 140%;
     }
+
+  
     
 }
