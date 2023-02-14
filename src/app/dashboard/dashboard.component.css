@@ -50,20 +50,18 @@ h1{
 
 } */
 
-
 .masterParent{
     height: 100%;
     width: 100%;
     padding: 12px;
-    /* background-color: steelblue; */
     display: flex;
     justify-content: space-between;
     align-items: center ;
     padding: 18px;
+    
 }
 
 .leftSide{
-    background-color: skyblue;
     padding: 1%;
     height: 100%;
     width: 68%;
@@ -75,7 +73,6 @@ h1{
 }
 
 .rightSide{
-    background-color: aliceblue;
     padding: 1%;
     height: 100%;
     width: 30%;
@@ -88,15 +85,12 @@ h1{
 .leftInner{
     height: 100%;
     width: 29%;
-    background-color: steelblue;
-    padding: 1%;
+    
 }
 
 .rightInner{
     height: 100%;
     width: 69%;
-    background-color: steelblue;
-    padding: 1%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -106,59 +100,74 @@ h1{
 .list{
     width: 100%;
     height: 100%;
-    background-color: aliceblue;
+    padding: 2%;
     border-radius: var(--radius);
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--body-color);
+    box-shadow: var(--btn-shadow);
 }
 
 .graph{
     width: 100%;
     height: 49%;
-    background-color: aliceblue;
+    background-color: var(--body-color);
+    box-shadow: var(--btn-shadow);
     border-radius: var(--radius);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2%;
+
 }
 
 
 .others{
     width: 100%;
     height: 49%;
-    background-color: aliceblue;
+    background-color: var(--body-color);
+    box-shadow: var(--btn-shadow);
     border-radius: var(--radius);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2%;
+
 }
 
 
 .infoCard{
     width: 100%;
     height: 30%;
-    background-color: darkslategrey;
     border-radius: var(--radius);
     padding: 2%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: var(--body-color);
+    box-shadow: var(--btn-shadow);
 }
 
 .cardUpper{
     width: 100%;
     height: 25%;
-    background-color: skyblue;
+    background-color: var(--secondnary-color);
+    border-radius: var(--radius);
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--text-color);
+    font-variant: small-caps;
+    font-style: italic;
 }
 
 .cardLower{
     width: 100%;
     height: 70%;
-    background-color: skyblue;
+    background-color: var(--secondnary-color);
+    border-radius: var(--radius);
+    color: var(--body-color);
     display: flex;
     justify-content: space-between;
     padding: 2%;
@@ -167,7 +176,7 @@ h1{
 .cardContent{
     width: 49%;
     height: 100%;
-    background-color: steelblue;
+    background-color: var(--primary-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -177,7 +186,7 @@ h1{
 .cardIcon{
     width: 49%;
     height: 100%;
-    background-color: steelblue;
+    background-color: var(--primary-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -206,12 +215,9 @@ h1{
     transform: scale(4);
 }
 
-.footerPage{
-    background: none;
-    border: none;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+.noScrollDiv{
+    overflow: hidden;
+    height: 100%;
 }
 
 @media screen and (max-width:600px) {
@@ -223,9 +229,12 @@ h1{
 
     .rightSide{
         width: 68%;
+        height: 130%;
     }
 
     .infoCard{
+       height: 40%;
+       margin-bottom: 10px;
        
     }
 
@@ -247,7 +256,7 @@ h1{
     }
 
     .icon{
-            transform: scale(1.5);
+            transform: scale(1);
             
     }
 
@@ -262,15 +271,19 @@ h1{
     .leftSide{
         flex-direction: column-reverse;
         height: 200%;
+        gap: 20px;
     }
 
     .leftInner{
         width: 140%;
         height: 50%;
+
     }
 
     .rightInner{
         width: 100%;
+        gap: 20px;
+
     }
 
     .graph{

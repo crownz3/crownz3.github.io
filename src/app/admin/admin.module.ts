@@ -14,6 +14,7 @@ import { FormComponent } from '../form/form.component';
 import { ViewFormDialogComponent } from '../Dialogs/view-form-dialog/view-form-dialog.component';
 import { DashboardFooterComponent } from '../Dialogs/dashboard-footer/dashboard-footer.component';
 import { NgChartsModule } from 'ng2-charts';
+import { DashboardComponent } from '../dashboard/dashboard.component';   
 @NgModule({
     declarations:[
         AdminComponent,
@@ -22,11 +23,10 @@ import { NgChartsModule } from 'ng2-charts';
         NewComponent,
         FormComponent,
         ViewFormDialogComponent,
-        DashboardFooterComponent
-        
+        DashboardFooterComponent,
     ],
     imports:[
-        AdminRoutingModule,RouterModule,MaterialModule,CommonModule,MatTableModule,FormsModule,ReactiveFormsModule,MatInputModule,NgChartsModule
+       AdminRoutingModule,RouterModule,MaterialModule,CommonModule,MatTableModule,FormsModule,ReactiveFormsModule,MatInputModule,NgChartsModule
     ]
 })
 

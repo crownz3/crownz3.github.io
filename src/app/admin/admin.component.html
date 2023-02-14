@@ -102,10 +102,17 @@
         <div class="h-text">Qr Code</div>
       </div>
       <div class="right">
+        <button class="footerPage" (click)="footerDialog()" title="About this app">
+          <mat-icon>widgets</mat-icon>
+        </button>
       </div>
     </header>
-    <div class="content">
-    <router-outlet></router-outlet>
+    <!-- <div class="content" [@routeAnimations]="prepareRoute(outlet)">
+      <router-outlet  #outlet='outlet'></router-outlet>
+    </div>   -->
+    <div class="content" >
+      <router-outlet ></router-outlet>
     </div>  
   </section>
 </div>
+

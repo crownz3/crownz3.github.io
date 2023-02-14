@@ -32,78 +32,69 @@
 
 </div> -->
 
-
-<div class="masterParent">
-    <div class="leftSide">
-        <div class="leftInner">
-             <div class="list">List</div>
-        </div>
-        <div class="rightInner">
-            <div class="graph">Grapgh</div>
-        <div class="others">Others</div>
-        </div>  
+<div class="masterParent" @fader>
+  <div class="leftSide">
+    <div class="leftInner">
+      <div class="list">List</div>
     </div>
-    <div class="rightSide ">
-        <div class="infoCard">
-            <div class="cardUpper">
-                   <div class="cardTitle">
-                        <div class="head">Complaints</div>
-                   </div>
-            </div>
-            <div class="cardLower">
-                <div class="cardContent">
-                    <div class="count">
-                        0000
-                    </div>
-                </div>
-                <div class="cardIcon">
-                    <div class="icon">
-                        <mat-icon>home</mat-icon>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="infoCard">
-            <div class="cardUpper">
-                <div class="cardTitle">
-                    <div class="head">Completed</div>
-               </div>
-            </div>
-            <div class="cardLower">
-                <div class="cardContent">
-                    <div class="count">
-                        0000
-                    </div>
-                </div>
-                <div class="cardIcon">
-                    <div class="icon">
-                        <mat-icon>home</mat-icon>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="infoCard">
-            <div class="cardUpper">
-                <div class="cardTitle">
-                    <div class="head">Pending</div>
-               </div>
-            </div>
-            <div class="cardLower">
-                <div class="cardContent">
-                    <div class="count">
-                        0000
-                    </div>
-                </div>
-                <div class="cardIcon">
-                    <div class="icon">
-                        <mat-icon>home</mat-icon>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="rightInner">
+      <div class="graph">Grapgh</div>
+      <div class="others">Others</div>
     </div>
+  </div>
+  <div class="rightSide">
+    <div class="infoCard">
+      <div class="cardUpper">
+        <div class="cardTitle">
+          <div class="head">Complaints</div>
+        </div>
+      </div>
+      <div class="cardLower">
+        <div class="cardContent">
+          <div class="count">0000</div>
+        </div>
+        <div class="cardIcon">
+          <div class="icon">
+            <mat-icon>warning_amber</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="infoCard">
+      <div class="cardUpper">
+        <div class="cardTitle">
+          <div class="head">Completed</div>
+        </div>
+      </div>
+      <div class="cardLower">
+        <div class="cardContent">
+          <div class="count">0000</div>
+        </div>
+        <div class="cardIcon">
+          <div class="icon">
+            <mat-icon>done_outline</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="infoCard">
+      <div class="cardUpper">
+        <div class="cardTitle">
+          <div class="head">Pending</div>
+        </div>
+      </div>
+      <div class="cardLower">
+        <div class="cardContent">
+          <div class="count">0000</div>
+        </div>
+        <div class="cardIcon">
+          <div class="icon">
+            <mat-icon>pending_actions</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <button  class="footerPage" (click)="footerDialog()">
-        <mat-icon>stars</mat-icon>
-    </button>
+ 
 </div>

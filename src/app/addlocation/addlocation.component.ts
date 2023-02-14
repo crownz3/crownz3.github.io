@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, FormArray, Validators, FormControl } from '@angular/forms';
 import { ViewFormDialogComponent } from '../Dialogs/view-form-dialog/view-form-dialog.component';
+import { fader } from '../admin/route-animations';
 
 
 const data: any[] | undefined = [
@@ -29,7 +30,10 @@ const data: any[] | undefined = [
 @Component({
   selector: 'app-addlocation',
   templateUrl: './addlocation.component.html',
-  styleUrls: ['./addlocation.component.css']
+  styleUrls: ['./addlocation.component.css'],
+  animations: [
+    fader
+   ]
 })
 
 
@@ -99,6 +103,8 @@ export class AddlocationComponent {
 
 
   }
+
+  
 
     questions():FormArray{
       return this.theForm.get('questions') as FormArray
