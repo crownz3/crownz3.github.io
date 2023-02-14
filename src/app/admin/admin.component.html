@@ -103,14 +103,14 @@
       </div>
       <div class="right">
         <button class="footerPage" (click)="footerDialog()" title="About this app">
-          <mat-icon>widgets</mat-icon>
+          <mat-icon>info</mat-icon>
         </button>
       </div>
     </header>
     <!-- <div class="content" [@routeAnimations]="prepareRoute(outlet)">
       <router-outlet  #outlet='outlet'></router-outlet>
     </div>   -->
-    <div class="content" >
+    <div class="content"  [@routeAnimations]="getRouteAnimationData()" >
       <router-outlet ></router-outlet>
     </div>  
   </section>

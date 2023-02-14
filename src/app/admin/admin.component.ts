@@ -2,6 +2,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { GoogleSigninService } from '../google-signin.service';
 import { DashboardFooterComponent } from '../Dialogs/dashboard-footer/dashboard-footer.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ChildrenOutletContexts } from '@angular/router';
+import { slideInAnimation } from './route-animations';
 
 declare let jsFile:any 
 
@@ -11,7 +13,9 @@ declare let jsFile:any
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
-
+  animations:[
+    slideInAnimation
+  ]
 })
 
 
@@ -19,7 +23,7 @@ export class AdminComponent implements OnInit {
   oAuthService: any;
   val = "pop"
   showLocations= false;
-  constructor(private  googleApi: GoogleSigninService,public dialog: MatDialog) { }
+  constructor(private  googleApi: GoogleSigninService,public dialog: MatDialog,private contexts: ChildrenOutletContexts) { }
 
   ngOnInit(): void {
     new jsFile()
@@ -43,6 +47,10 @@ export class AdminComponent implements OnInit {
 
   hide(){
     this.showLocations = false
+  }
+
+  getRouteAnimationData() {
+    return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
   }
 
   footerDialog(){

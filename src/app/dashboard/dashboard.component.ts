@@ -1,7 +1,8 @@
 import { trigger, transition, query, style, animate, state } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { fader } from '../admin/route-animations';
+import { slideInAnimation } from '../admin/route-animations';
+// import { fader } from '../admin/route-animations';
 
 import { DashboardFooterComponent } from '../Dialogs/dashboard-footer/dashboard-footer.component';
 
@@ -10,14 +11,16 @@ import { DashboardFooterComponent } from '../Dialogs/dashboard-footer/dashboard-
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
   animations: [
-   fader
+    slideInAnimation
   ]
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit{
 
   constructor(public dialog: MatDialog) { }
 
+
   ngOnInit(): void {
+    
   }
 
   footerDialog(){

@@ -12,14 +12,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
 import { MatTableModule } from '@angular/material/table'  
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     GLoginComponent,
-    DashboardComponent
   ],
   imports: [
     AppRoutingModule,

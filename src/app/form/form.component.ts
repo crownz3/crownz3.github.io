@@ -6,14 +6,14 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
-import { fader } from '../admin/route-animations';
+import { slideInAnimation } from '../admin/route-animations';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css'],
   animations: [
-    fader
+      slideInAnimation
    ]
 })
 export class FormComponent implements OnInit {

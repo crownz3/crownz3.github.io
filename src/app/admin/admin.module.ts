@@ -24,6 +24,8 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
         FormComponent,
         ViewFormDialogComponent,
         DashboardFooterComponent,
+        DashboardComponent
+
     ],
     imports:[
        AdminRoutingModule,RouterModule,MaterialModule,CommonModule,MatTableModule,FormsModule,ReactiveFormsModule,MatInputModule,NgChartsModule

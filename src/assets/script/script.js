@@ -29,8 +29,8 @@ function jsFile() {
     let screenSize = screen.matches
 
     if (screenSize) {
-      sidebar.classList.remove('close')
-      sidebar.classList.add('open')
+      sidebar.classList.remove('open')
+      sidebar.classList.add('close')
     } else {
       sidebar.classList.remove('close')
       sidebar.classList.add('open')

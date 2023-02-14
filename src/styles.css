@@ -59,7 +59,7 @@ body {  font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
 }
 
 ::-webkit-scrollbar:hover{
@@ -78,3 +78,19 @@ body {  font-family: Roboto, "Helvetica Neue", sans-serif; }
     
 }
 
+::-webkit-scrollbar:horizontal{
+    height: 4px ;
+}
+
+::-webkit-scrollbar-track:horizontal {
+    background:var(--scroll); 
+    border-radius:var(--radius);
+    
+}
+
+::-webkit-scrollbar-thumb:horizontal{
+    background: var(--text-color); 
+
+    border-radius: var(--radius);
+
+}
