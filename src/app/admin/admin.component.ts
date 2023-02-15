@@ -42,11 +42,11 @@ export class AdminComponent implements OnInit {
   }
 
   show(){
-    this.showLocations = false ? this.showLocations === true : this.showLocations === false
+    // this.showLocations = false ? this.showLocations === true : this.showLocations === false
   }
 
   hide(){
-    this.showLocations = false
+    // this.showLocations = false
   }
 
   getRouteAnimationData() {
