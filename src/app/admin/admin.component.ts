@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { GoogleSigninService } from '../google-signin.service';
 import { DashboardFooterComponent } from '../Dialogs/dashboard-footer/dashboard-footer.component';
 import { MatDialog } from '@angular/material/dialog';
-import { ChildrenOutletContexts } from '@angular/router';
+import { ActivatedRoute, ChildrenOutletContexts, Router } from '@angular/router';
 import { slideInAnimation } from './route-animations';
 
 declare let jsFile:any 
@@ -21,9 +21,12 @@ declare let jsFile:any
 
 export class AdminComponent implements OnInit {
   oAuthService: any;
-  val = "pop"
+  val = "pop";
+  routeName = 'what about this page'
   showLocations= false;
-  constructor(private  googleApi: GoogleSigninService,public dialog: MatDialog,private contexts: ChildrenOutletContexts) { }
+  constructor(private  googleApi: GoogleSigninService,public dialog: MatDialog,private contexts: ChildrenOutletContexts, ) { 
+   
+    }
 
   ngOnInit(): void {
     new jsFile()

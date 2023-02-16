@@ -1,3 +1,8 @@
+.master-parent{
+    max-height: 90vh;
+    min-height: 10px;
+}
+
 h1{
     color: var(--text-color);
     font-variant: small-caps;
@@ -92,6 +97,14 @@ p:hover{
     .closeBtn{
         display: none;
     }
+
+    .centerLine{
+        height: 2px;
+        width: 100%;
+        background-color: var(--text-color);
+    }
+ 
+
  
 }
 

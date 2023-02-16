@@ -1,5 +1,6 @@
 import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { Chart } from 'chart.js';
 import { slideInAnimation } from '../admin/route-animations';
 import { DashboardFooterComponent } from '../Dialogs/dashboard-footer/dashboard-footer.component';
@@ -104,12 +105,19 @@ export class DashboardComponent implements OnInit{
       status:'process'
     },
   ];
+  currentRoute: any;
 
-  constructor(public dialog: MatDialog,) { }
+  constructor(public dialog: MatDialog,public router:Router) {
+    console.log(router.url)
+   
+   }
 
+    
 
   ngOnInit(): void {
-    this.createChart()
+    this.createChart();
+
+    
   }
 
   footerDialog(){
@@ -153,5 +161,4 @@ export class DashboardComponent implements OnInit{
 
  
 }
- 
 
