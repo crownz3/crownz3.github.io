@@ -4,7 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, FormArray, Validators, FormControl } from '@angular/forms';
 import { ViewFormDialogComponent } from '../Dialogs/view-form-dialog/view-form-dialog.component';
-import {  slideInAnimation } from '../admin/route-animations';
+// import {  slideInAnimation } from '../admin/route-animations';
 
 
 const data: any[] | undefined = [
@@ -31,9 +31,9 @@ const data: any[] | undefined = [
   selector: 'app-addlocation',
   templateUrl: './addlocation.component.html',
   styleUrls: ['./addlocation.component.css'],
-  animations: [
-    slideInAnimation
-   ]
+  // animations: [
+  //   slideInAnimation
+  //  ]
 })
 
 

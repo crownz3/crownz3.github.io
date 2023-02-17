@@ -6,19 +6,22 @@ import { FormComponent } from '../form/form.component';
 import { HostelComponent } from '../Locations/hostel/hostel.component';
 import { NewComponent } from '../new/new.component';
 
-const AdminRoutes : Routes = [
-    {path:'',component:DashboardComponent},
-    {path:'new',component:NewComponent},
-    {path:"dashboard",component:DashboardComponent},
-    {path:"addlocation",component:AddlocationComponent,},
-    {path:"form",component:FormComponent},
+const AdminRoutes: Routes = [
+  { path: '', component: DashboardComponent, data: { name: 'Dashboard' } },
+  { path: 'new', component: NewComponent, data: { name: 'new' } },
+  { path: 'dashboard', component: DashboardComponent, data: { name: 'Dashboard' } },
+  {
+    path: 'addlocation',
+    component: AddlocationComponent,
+    data: { name: 'addlocation' },
+  },
+  { path: 'form', component: FormComponent, data: { name: 'form' } },
 
-    {path:"canteen",component:HostelComponent},
-]
+  { path: 'canteen', component: HostelComponent, data: { name: 'canteen' } },
+];
 
 @NgModule({
-    imports:[RouterModule.forChild(AdminRoutes)],
-    exports:[RouterModule]
+  imports: [RouterModule.forChild(AdminRoutes)],
+  exports: [RouterModule],
 })
-
-export class AdminRoutingModule{}
+export class AdminRoutingModule {}

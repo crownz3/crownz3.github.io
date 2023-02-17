@@ -1,5 +1,4 @@
 <div class="big-parent">
-  
   <nav class="sidebar close">
     <header>
       <div class="image-text">
@@ -23,45 +22,51 @@
             <input class="search-input" type="search" placeholder="Search..." />
           </li>
           <li class="nav-link">
-            <a routerLink="dashboard" title = "Dashboard">
+            <a routerLink="dashboard" title="Dashboard">
               <i class="bx bx-home-alt icon"></i>
               <span class="text nav-text">Dashboard</span>
             </a>
           </li>
           <li class="nav-link">
-            <a routerLink="new" title = "For Practice">
+            <a routerLink="new" title="For Practice">
               <i class="bx bx-bar-chart-alt-2 icon"></i>
               <span class="text nav-text">Practice</span>
             </a>
           </li>
           <li class="nav-link">
-            <a routerLink="form" title = "Form">
+            <a routerLink="form" title="Form">
               <i class="bx bx-bell icon"></i>
               <span class="text nav-text">Form</span>
             </a>
           </li>
           <li class="nav-link">
-            <a href="#" title = "To main Page">
+            <a href="#" title="To main Page">
               <i class="bx bx-bar-chart-alt icon"></i>
               <span class="text nav-text">Analytics</span>
             </a>
           </li>
           <li class="nav-link">
-            <a href="#" title = "To main Page">
+            <a href="#" title="To main Page">
               <i class="bx bx-hard-hat icon"></i>
               <span class="text nav-text">Complaints</span>
             </a>
           </li>
-          <li class="nav-link" >
-              <a (click)="load()" style="cursor: pointer" routerLink="addlocation" title = "Add Location">
-                <i class="bx bx-location-plus icon"></i>
-                <span class="text nav-text">Location</span>
-                <button (mouseover)="show()"class="locationDown"><i class="dropdown-icon bx bx-chevron-down"></i></button>
-              </a>         
+          <li class="nav-link">
+            <a
+              (click)="load()"
+              style="cursor: pointer"
+              routerLink="addlocation"
+              title="Add Location"
+            >
+              <i class="bx bx-location-plus icon"></i>
+              <span class="text nav-text">Location</span>
+              <button (mouseover)="show()" class="locationDown">
+                <i class="dropdown-icon bx bx-chevron-down"></i>
+              </button>
+            </a>
           </li>
-          
         </ul>
-        <div class="drpdown-menu"  *ngIf="showLocations" >
+        <div class="drpdown-menu" *ngIf="showLocations">
           <ul (mouseleave)="hide()" class="p-0">
             <li><a routerLink="canteen">Canteen</a></li>
             <li><a routerLink="hostel">hostel</a></li>
@@ -100,11 +105,15 @@
     <header class="header">
       <div class="left">
         <div class="h-text">
-            {{routeName}}
+          {{ route.activatedRouteData['name'] }}
         </div>
       </div>
       <div class="right">
-        <button class="footerPage" (click)="footerDialog()" title="About this app">
+        <button
+          class="footerPage"
+          (click)="footerDialog()"
+          title="About this app"
+        >
           <mat-icon>info</mat-icon>
         </button>
       </div>
@@ -112,9 +121,9 @@
     <!-- <div class="content" [@routeAnimations]="prepareRoute(outlet)">
       <router-outlet  #outlet='outlet'></router-outlet>
     </div>   -->
-    <div class="content"  [@routeAnimations]="getRouteAnimationData()" >
-      <router-outlet ></router-outlet>
-    </div>  
+    <!-- [@routeAnimations]="getRouteAnimationData() -->
+    <div class="content">
+      <router-outlet #route="outlet"></router-outlet>
+    </div>
   </section>
 </div>
-

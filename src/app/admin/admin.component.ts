@@ -3,7 +3,6 @@ import { GoogleSigninService } from '../google-signin.service';
 import { DashboardFooterComponent } from '../Dialogs/dashboard-footer/dashboard-footer.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, ChildrenOutletContexts, Router } from '@angular/router';
-import { slideInAnimation } from './route-animations';
 
 declare let jsFile:any 
 
@@ -13,9 +12,9 @@ declare let jsFile:any
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
-  animations:[
-    slideInAnimation
-  ]
+  // animations:[
+  //   slideInAnimation
+  // ]
 })
 
 

@@ -2,7 +2,7 @@ import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular
 import { MatDialog } from '@angular/material/dialog';
 import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { Chart } from 'chart.js';
-import { slideInAnimation } from '../admin/route-animations';
+// import { slideInAnimation } from '../admin/route-animations';
 import { DashboardFooterComponent } from '../Dialogs/dashboard-footer/dashboard-footer.component';
 
 
@@ -11,9 +11,9 @@ import { DashboardFooterComponent } from '../Dialogs/dashboard-footer/dashboard-
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
-  animations: [
-    slideInAnimation
-  ]
+  // animations: [
+  //   slideInAnimation
+  // ]
 })
 export class DashboardComponent implements OnInit{
 
