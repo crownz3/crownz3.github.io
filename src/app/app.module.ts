@@ -14,12 +14,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table'  
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { CommonSharedModule } from './layout/commonSharedModule';
+import { UserComponent } from './layout/user/user.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     GLoginComponent,
+    UserComponent
   ],
   imports: [
     AppRoutingModule,

@@ -3,19 +3,19 @@ import { MatDialog } from '@angular/material/dialog';
 import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { Chart } from 'chart.js';
 // import { slideInAnimation } from '../admin/route-animations';
-import { DashboardFooterComponent } from '../Dialogs/dashboard-footer/dashboard-footer.component';
+import { DashboardFooterComponent } from '../../Dialogs/dashboard-footer/dashboard-footer.component';
 
 
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css'],
+  selector: 'app-admin-dashboard',
+  templateUrl: './admin-dashboard.component.html',
+  styleUrls: ['./admin-dashboard.component.css'],
   // animations: [
   //   slideInAnimation
   // ]
 })
-export class DashboardComponent implements OnInit{
+export class AdminDashboardComponent implements OnInit{
 
   public chart: any;
 

@@ -1,1 +1,130 @@
-<p>user works!</p>
+<div class="big-parent">
+    <nav class="sidebar close">
+      <header>
+        <div class="image-text">
+          <span class="image">
+            <img src="../../assets/img.webp" alt="Image" />
+          </span>
+  
+          <div class="text header-text">
+            <span class="name">Ibrahim</span><br />
+            <span class="profession">Web Developer</span>
+          </div>
+        </div>
+        <i class="bx bx-chevron-right toggle"></i>
+      </header>
+  
+      <div class="menu-bar">
+        <div class="menu">
+          <ul class="menu-links">
+            <li class="search-box">
+              <i class="bx bx-search s-icon"></i>
+              <input class="search-input" type="search" placeholder="Search..." />
+            </li>
+            <li class="nav-link">
+              <a routerLink="dashboard" title="Dashboard">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="text nav-text">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a routerLink="new" title="For Practice">
+                <i class="bx bx-bar-chart-alt-2 icon"></i>
+                <span class="text nav-text">Practice</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a routerLink="form" title="Form">
+                <i class="bx bx-bell icon"></i>
+                <span class="text nav-text">Form</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="#" title="To main Page">
+                <i class="bx bx-bar-chart-alt icon"></i>
+                <span class="text nav-text">Analytics</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="#" title="To main Page">
+                <i class="bx bx-hard-hat icon"></i>
+                <span class="text nav-text">Complaints</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a
+                (click)="load()"
+                style="cursor: pointer"
+                routerLink="addlocation"
+                title="Add Location"
+              >
+                <i class="bx bx-location-plus icon"></i>
+                <span class="text nav-text">Location</span>
+                <button (mouseover)="show()" class="locationDown">
+                  <i class="dropdown-icon bx bx-chevron-down"></i>
+                </button>
+              </a>
+            </li>
+          </ul>
+          <div class="drpdown-menu" *ngIf="showLocations">
+            <ul (mouseleave)="hide()" class="p-0">
+              <li><a routerLink="canteen">Canteen</a></li>
+              <li><a routerLink="hostel">hostel</a></li>
+              <li><a href="">Location Z</a></li>
+              <li><a href="">Location B</a></li>
+              <li><a href="">Location B</a></li>
+              <li><a href="">Location B</a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <div class="bottom-content">
+          <li class="nav-link">
+            <a (click)="logOut()" style="cursor: pointer" title="Logout">
+              <i class="bx bx-log-out icon"></i>
+              <span class="text nav-text">Logout</span>
+            </a>
+          </li>
+  
+          <li class="mode">
+            <div class="moon-sun">
+              <i class="bx bx-moon icon moon"></i>
+              <i class="bx bx-sun icon sun"></i>
+            </div>
+            <span class="mode-text text">Light Mode</span>
+  
+            <div class="toggle-switch">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+  
+    <section class="main">
+      <header class="header">
+        <div class="left">
+          <div class="h-text">
+            {{ route.activatedRouteData['name'] }}
+          </div>
+        </div>
+        <div class="right">
+          <button
+            class="footerPage"
+            (click)="footerDialog()"
+            title="About this app"
+          >
+            <mat-icon>info</mat-icon>
+          </button>
+        </div>
+      </header>
+      <!-- <div class="content" [@routeAnimations]="prepareRoute(outlet)">
+        <router-outlet  #outlet='outlet'></router-outlet>
+      </div>   -->
+      <!-- [@routeAnimations]="getRouteAnimationData() -->
+      <div class="content">
+        <router-outlet #route="outlet"></router-outlet>
+      </div>
+    </section>
+  </div>
+  
