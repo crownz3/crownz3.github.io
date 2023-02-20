@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GoogleSigninService, UserInfo } from '../google-signin.service';
+import { GoogleSigninService} from '../google-signin.service';
 
 @Component({
   selector: 'app-g-login',
@@ -8,15 +8,20 @@ import { GoogleSigninService, UserInfo } from '../google-signin.service';
 })
 export class GLoginComponent implements OnInit {
   title = 'Qr Code Scanner';
-  userInfo?: UserInfo;
+  userInfo?: any;
   
   constructor(private  googleApi: GoogleSigninService) {
     googleApi.userProfileSubject.subscribe((info: any) => {
+      console.log(info)
       this.userInfo = info;
     });
   }
+
+
   ngOnInit(): void {
   }
+
+
   isLoggedIn(): boolean {
     return this.googleApi.isLoggedIn();
   }

@@ -3,7 +3,6 @@ import * as mapboxgl from 'mapbox-gl';
 import { ChartConfiguration, ChartData, ChartEvent, ChartType, Ticks } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import DataLabelsPlugin from 'chartjs-plugin-datalabels';
-import { ObjectServiceService } from '../Services/object-service.service';
 import {
   FormBuilder,
   FormArray,
@@ -133,7 +132,7 @@ export class NewComponent implements OnInit {
     this.addPerson()
   }
 
-  constructor(private logger:ObjectServiceService,private fb:FormBuilder,) //  private fb:FormBuilder,
+  constructor(private fb:FormBuilder,) //  private fb:FormBuilder,
   {}
 
 
