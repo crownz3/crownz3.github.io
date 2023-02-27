@@ -131,10 +131,7 @@
       <span class="mb-3 bg-danger d-flex justify-content-center text-light"
         style="letter-spacing: 1px;"
         *ngIf="
-          theForm.get('location')?.hasError('required') &&
-          theForm.get('location')?.touched ||  theForm.get('landmark')?.hasError('required') &&
-          theForm.get('landmark')?.touched &&  theForm.get('status')?.hasError('required') ||
-          theForm.get('status')?.touched
+          theForm.get('location')?.hasError('required') &&  theForm.get('landmark')?.hasError('required')  &&  theForm.get('status')?.hasError('required') 
         "
         >*Please fill all required fields to enable Add Question button</span
       >

@@ -6,15 +6,12 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
-// import { slideInAnimation } from '../admin/route-animations';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css'],
-  // animations: [
-  //     slideInAnimation
-  //  ]
+
 })
 export class FormComponent implements OnInit {
   ReceivedData: any;
@@ -30,7 +27,6 @@ export class FormComponent implements OnInit {
     this.loooping();
 
   }
-
 
    getData() {
     let Recdata: any = localStorage.getItem('Question');

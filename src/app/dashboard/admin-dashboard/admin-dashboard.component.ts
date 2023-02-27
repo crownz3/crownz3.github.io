@@ -2,7 +2,6 @@ import { Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular
 import { MatDialog } from '@angular/material/dialog';
 import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { Chart } from 'chart.js';
-// import { slideInAnimation } from '../admin/route-animations';
 import { DashboardFooterComponent } from '../../Dialogs/dashboard-footer/dashboard-footer.component';
 
 
@@ -11,9 +10,6 @@ import { DashboardFooterComponent } from '../../Dialogs/dashboard-footer/dashboa
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.css'],
-  // animations: [
-  //   slideInAnimation
-  // ]
 })
 export class AdminDashboardComponent implements OnInit{
 
@@ -108,16 +104,13 @@ export class AdminDashboardComponent implements OnInit{
   currentRoute: any;
 
   constructor(public dialog: MatDialog,public router:Router) {
-    console.log(router.url)
    
    }
 
-    
 
   ngOnInit(): void {
     this.createChart();
 
-    
   }
 
   footerDialog(){

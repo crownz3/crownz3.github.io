@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'Project';
 
   constructor(private route: ActivatedRoute,
-    private router: Router){console.log(this.router)}
+    private router: Router){}
 
     
 }

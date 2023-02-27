@@ -4,7 +4,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, FormArray, Validators, FormControl } from '@angular/forms';
 import { ViewFormDialogComponent } from '../Dialogs/view-form-dialog/view-form-dialog.component';
-// import {  slideInAnimation } from '../admin/route-animations';
 
 
 const data: any[] | undefined = [
@@ -25,15 +24,10 @@ const data: any[] | undefined = [
 ]
 
 
-
-
 @Component({
   selector: 'app-addlocation',
   templateUrl: './addlocation.component.html',
   styleUrls: ['./addlocation.component.css'],
-  // animations: [
-  //   slideInAnimation
-  //  ]
 })
 
 
@@ -60,11 +54,7 @@ export class AddlocationComponent {
   theForm: FormGroup | any;
 
 
-
   constructor(private fb: FormBuilder, public dialog: MatDialog) { }
-
-
-
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -75,7 +65,6 @@ export class AddlocationComponent {
 
     this.dataSource.paginator = this.paginator;
 
-    // javascript function call
     window.addEventListener('resize', () => {
       let screen = window.matchMedia("(max-width:600px)")
       let screenSize = screen.matches
