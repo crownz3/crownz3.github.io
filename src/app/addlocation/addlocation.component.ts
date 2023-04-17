@@ -199,7 +199,7 @@ export class AddlocationComponent {
       this.http.get(this.baseUrl + 'question/getQuestion/' + locationId).subscribe((res:any)=>{
       console.log(res)
       const dialogRef = this.dialog.open(QrcodeComponent, {
-        data : `http://192.168.1.77:4200?q=${locationId}`
+        data : `${location.origin}?q=${locationId}`
       });
       dialogRef.afterOpened().subscribe((res) => {
         console.log(res);
