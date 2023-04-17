@@ -12,8 +12,7 @@ import { localStorage } from './service/localStorage.service';
 })
 export class AppComponent implements OnInit {
 
-  // baseUrl = environment.serverBaseUrl;
-  baseUrl ="http://192.168.1.59:3000"
+  baseUrl = environment.serverBaseUrl;
   userInfo: any;
 
   constructor(
