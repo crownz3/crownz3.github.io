@@ -9,17 +9,13 @@ import { HttpClient, HttpHeaderResponse, HttpHeaders } from '@angular/common/htt
   styleUrls: ['./g-login.component.css']
 })
 export class GLoginComponent implements OnInit {
-  title = 'Qr Code Scanner';
   userInfo?: any;
-  env = environment.path
-  // http : any
+  baseUrl = environment.serverBaseUrl
   path:any
   constructor(private  googleApi: GoogleSigninService,private http: HttpClient) {
     googleApi.userProfileSubject.subscribe((info: any) => {
-      console.log(googleApi.userProfileSubject)
-      console.log(info)
       this.userInfo = info;
-      this.path = this.env+'/api/login/saveLoginInfo'
+      this.path = this.baseUrl+'/saveLoginInfo'
       this.http.post(this.path,info, {headers: {'content-type':'application/json'}}).subscribe((res:any)=>{
         console.log(res)
         res.sucess ? alert("Succesfully") : alert('Nope')
@@ -32,9 +28,7 @@ export class GLoginComponent implements OnInit {
   }
 
 
-  isLoggedIn(): boolean {
-    return this.googleApi.isLoggedIn();
-  }
+ 
 
   logOut() {
     this.googleApi.signOut();

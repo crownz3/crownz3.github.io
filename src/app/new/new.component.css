@@ -1,0 +1,88 @@
+.leaf-node {
+  padding-left: 30px;
+}
+
+.example-tree-invisible {
+  display: none;
+}
+
+.example-tree {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 2px;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+.example-tree .mat-nested-tree-node .nested-node {
+  padding-left: 40px;
+}
+
+.example-tree .nested-node > .mat-tree-node {
+  padding-left: 40px;
+}
+
+.nested-node {
+  margin-top: 5px;
+}
+
+.mat-icon{
+  background-color:rgb(215, 234, 250);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.mat-tree-node {
+  position: relative;
+  overflow: hidden;
+  padding: 5px;
+  transition: 0.3s;
+  border-radius: 12px;
+  margin-top: 5px;
+  background-color: rgb(231, 244, 255);
+  color: var(--text-color);
+  font-weight: 600;
+  border-right: 10px solid var(--secondnary-color);
+  border-left: 10px solid var(--secondnary-color);
+}
+
+.mat-tree-node:hover {
+  border-radius: 24px;
+  background-color: var(--primary-color);
+  color: var(--body-color);
+  border-left: 0px;
+  border-right: 0px;
+  font-weight: 700;
+}
+
+.mat-tree-node:hover .mat-icon{
+  background-color: #3d74a1;
+}
+
+
+.mat-tree-node-noChild {
+  padding: 5px;
+  transition: 0.3s;
+  border-radius: 12px;
+  margin-top: 5px;
+  background-color: rgb(231, 244, 255);
+  color: var(--text-color);
+
+}
+
+.mat-tree-node-noChild:hover {
+  border-radius: 24px;
+  background-color: rgb(255, 187, 204);
+}
+
+.mat-tree-node-noChild button {
+  cursor: default;
+}

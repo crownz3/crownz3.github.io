@@ -17,6 +17,7 @@ import { CommonSharedModule } from './layout/commonSharedModule';
 import { UserComponent } from './layout/user/user.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,14 +30,14 @@ import { UserComponent } from './layout/user/user.component';
     OAuthModule.forRoot(),
     BrowserAnimationsModule,
     MaterialModule,
-    AdminModule,
     UserModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
     MatFormFieldModule,
-    CommonSharedModule
+    CommonSharedModule,
+    AdminModule,
   ],
   providers: [OAuthService, GoogleSigninService, UrlHelperService],
   bootstrap: [AppComponent]

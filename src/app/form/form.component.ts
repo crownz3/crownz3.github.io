@@ -22,8 +22,7 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData();  
-    this.theAnswerForm = this.fb.array([
-    ])
+    this.theAnswerForm = this.fb.array([])
     this.loooping();
 
   }
@@ -31,7 +30,6 @@ export class FormComponent implements OnInit {
    getData() {
     let Recdata: any = localStorage.getItem('Question');
     this.ReceivedData = JSON.parse(Recdata);
-   
   }
 
   footerText(){
@@ -50,24 +48,28 @@ export class FormComponent implements OnInit {
   newAnswer(i: any): FormGroup {
     if (this.ReceivedData.questions[i].selectOption === 'checkbox') {
       
-      return this.fb.group({
-        questionNo: new FormControl('', Validators.required),
-        location: new FormControl('', Validators.required),
-        landmark: new FormControl('', Validators.required),
-        question: new FormControl('', Validators.required),
-        answerType: new FormControl('',Validators.required), 
-        answer: this.fb.array([],Validators.required),
-      });
+      return this.fb.group(
+        {
+          questionNo: new FormControl('', Validators.required),
+          location: new FormControl('', Validators.required),
+          landmark: new FormControl('', Validators.required),
+          question: new FormControl('', Validators.required),
+          answerType: new FormControl('',Validators.required), 
+          answer: this.fb.array([],Validators.required),
+        }
+      );
       
     } else {
-      return this.fb.group({
+      return this.fb.group(
+        {
         questionNo: new FormControl('', Validators.required),
         location: new FormControl('', Validators.required),
         landmark: new FormControl('', Validators.required),
         question: new FormControl('', Validators.required),
         answerType: new FormControl('',Validators.required), 
         answer: new FormControl('', Validators.required),
-      });
+        }
+      );
     }
   }
 

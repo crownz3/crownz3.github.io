@@ -1,0 +1,9 @@
+<div class="parent">
+  <ngx-qrcode
+    [elementType]="elementType"
+    [errorCorrectionLevel]="correctionLevel"
+    [value]="value"
+    class="bshadow"
+  ></ngx-qrcode>
+  <input [(ngModel)]="value" spellcheck="false" readonly  />
+</div>

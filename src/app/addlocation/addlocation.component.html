@@ -1,4 +1,3 @@
-<!-- {{ this.theForm.value | json }} -->
 
 <div class="masterParent">
   <div class="headview">
@@ -32,7 +31,7 @@
 
           <ng-container matColumnDef="Location">
             <th mat-header-cell *matHeaderCellDef>Location</th>
-            <td mat-cell *matCellDef="let element">{{ element.location }}</td>
+            <td mat-cell *matCellDef="let element">{{ element.locationName }}</td>
           </ng-container>
 
           <ng-container matColumnDef="Landmark">
@@ -47,10 +46,10 @@
 
           <ng-container matColumnDef="Operations">
             <th mat-header-cell *matHeaderCellDef>Operations</th>
-            <td mat-cell *matCellDef="let element" class="">
-              <button (click)="generateForm()" class="gen" mat-button>Generate Qr</button>
-              <button (click)="editForm()" class="gen" mat-button>Edit</button>
-              <button (click)="viewForm()" class="gen" mat-button>View</button>
+            <td mat-cell *matCellDef="let element;let i = index" >
+              <button (click)="generateForm(i)" class="gen" mat-button>Generate Qr</button>
+              <button (click)="editForm(i)" class="gen" mat-button>Edit</button>
+              <button (click)="viewForm(i)" class="gen" mat-button>View</button>
             </td>
           </ng-container>
 
@@ -90,8 +89,7 @@
               placeholder="ex:hostel"
               required
               formControlName="location"
-            />
-            
+            />     
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Landmark</mat-label>
@@ -128,13 +126,13 @@
         </div>
         
       </div>
-      <span class="mb-3 bg-danger d-flex justify-content-center text-light"
+      <!-- <span class="mb-3 bg-danger d-flex justify-content-center text-light"
         style="letter-spacing: 1px;"
         *ngIf="
           theForm.get('location')?.hasError('required') &&  theForm.get('landmark')?.hasError('required')  &&  theForm.get('status')?.hasError('required') 
         "
-        >*Please fill all required fields to enable Add Question button</span
-      >
+        >*Please fill all required fields to enable add Question button</span
+      > -->
     </div>
     
   </div>
@@ -144,7 +142,7 @@
 
   <div class="local">
     <form *ngIf="addQuestion" [formGroup]="theForm" >
-      <div formArrayName="questions"  >
+      <div formArrayName="questionList"  >
         <div
           class="questionCard mb-5"
           *ngFor="
@@ -171,14 +169,14 @@
                     required
                     formControlName="question"
                   />
-                  <span
+                  <!-- <span
                     class="text-dark rounded"
                     *ngIf="
                       theForm.get('questions')?.status === 'Invalid' &&
                       theForm.get('questions')?.touched
                     "
                     >*Required Field</span
-                  >
+                  > -->
                 </mat-form-field>
               </div>
               <div class="questionDelBtnDiv">
@@ -228,7 +226,7 @@
 
             <!-- Radio Option Card -->
 
-            <div formArrayName="options" [hidden]="btnShow(questionIndex)">
+            <div formArrayName="optionsList" [hidden]="btnShow(questionIndex)">
               <div
                 *ngFor="
                   let optionControl of questionsOption(questionIndex).controls;
@@ -266,11 +264,11 @@
                             matInput
                             placeholder="ex:Apple 12 pro?"
                             required
-                            formControlName="opt"
+                            formControlName="option"
                           />
                         </mat-form-field>
                       </div>
-
+<!-- 
                       <span class="mb-3 bg-danger d-flex justify-content-center text-light"
                       style="letter-spacing: 1px;"
                       *ngIf="
@@ -278,7 +276,7 @@
                         theForm.get('questions')?.touched
                       "
             >*Please fill all required fields to enable Add Question button</span
-          >
+          > -->
                     </div>
                   </div>
                 </div>
@@ -295,10 +293,11 @@
 
     <div class="lol d-flex my-4 justify-content-end" *ngIf="addlocation">
       <button
-        class="btns"
+        class="btns addQUestion"
         mat-button
         [disabled]="!theForm.valid"
         (click)="addQuestions()"
+        #container
       >
         Add Question
       </button>
@@ -309,7 +308,7 @@
     <button
       class="btns"
       mat-button
-      [disabled]="(!theForm.valid) || (theForm.value.questions.length === 0)"
+      [disabled]="(!theForm.valid) || (theForm.value.questionList.length === 0)"
       (click)="submit()"
     >
       Submit

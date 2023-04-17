@@ -3,7 +3,9 @@
       <header>
         <div class="image-text">
           <span class="image">
-            <img src="../../assets/img.webp" alt="Image" />
+            <button class="profile-btn" (click)="openProfile()" title="Profile">
+              <img src="../../assets/img.webp" alt="Image" />
+            </button>
           </span>
   
           <div class="text header-text">
@@ -101,7 +103,7 @@
       </div>
     </nav>
   
-    <section class="main">
+    <section class="main close">
       <header class="header">
         <div class="left">
           <div class="h-text">
@@ -118,10 +120,7 @@
           </button>
         </div>
       </header>
-      <!-- <div class="content" [@routeAnimations]="prepareRoute(outlet)">
-        <router-outlet  #outlet='outlet'></router-outlet>
-      </div>   -->
-      <!-- [@routeAnimations]="getRouteAnimationData() -->
+   
       <div class="content">
         <router-outlet #route="outlet"></router-outlet>
       </div>

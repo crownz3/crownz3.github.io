@@ -7,17 +7,15 @@ import {
   ChildrenOutletContexts,
   Router,
 } from '@angular/router';
+import { ProfileViewComponent } from 'src/app/Dialogs/profile-view/profile-view.component';
+import { QrcodeComponent } from 'ngx-qrcode2';
 
-// declare let jsFile:any
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
   encapsulation: ViewEncapsulation.Emulated,
-  // animations:[
-  //   slideInAnimation
-  // ]
 })
 export class AdminComponent implements OnInit {
   oAuthService: any;
@@ -27,20 +25,20 @@ export class AdminComponent implements OnInit {
   constructor(
     private googleApi: GoogleSigninService,
     public dialog: MatDialog,
-    private contexts: ChildrenOutletContexts
   ) {}
 
-  ngOnInit(): void {
-    // new jsFile()
 
+  ngOnInit(): void {
     const body = document.querySelector('.big-parent'),
       sidebar = body?.querySelector('.sidebar'),
+      main = body?.querySelector('.main'),
       toggle = body?.querySelector('.toggle'),
       modeSwitch = body?.querySelector('.toggle-switch'),
       modeText = body?.querySelector('.mode-text');
 
     toggle?.addEventListener('click', () => {
       sidebar?.classList.toggle('close');
+      main?.classList.toggle('open');
     });
 
     modeSwitch?.addEventListener('click', () => {
@@ -61,9 +59,13 @@ export class AdminComponent implements OnInit {
       if (screenSize) {
         sidebar!.classList.remove('open');
         sidebar!.classList.add('close');
+        main!.classList.remove('open');
+        main!.classList.add('close');
       } else {
         sidebar!.classList.remove('close');
         sidebar!.classList.add('open');
+        main!.classList.remove('close');
+        main!.classList.add('open');
       }
     });
   }
@@ -82,11 +84,7 @@ export class AdminComponent implements OnInit {
     // this.showLocations = false
   }
 
-  getRouteAnimationData() {
-    return this.contexts.getContext('primary')?.route?.snapshot?.data?.[
-      'animation'
-    ];
-  }
+
 
   footerDialog() {
     const dialogRef = this.dialog.open(DashboardFooterComponent, {});
@@ -95,4 +93,14 @@ export class AdminComponent implements OnInit {
       console.log('The EditForm is opened');
     });
   }
+
+  openProfile(){
+    const dialogRef = this.dialog.open(ProfileViewComponent, {
+      maxHeight: '80vh',
+
+    });
+
+  }
+
+ 
 }

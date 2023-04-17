@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-.inner-parent {
+.parent {
     height: 80%;
     width: 90%;
     padding: 5%;
@@ -16,98 +16,35 @@
     align-items: center;
 }
 
-.left-circle {
-    width: 25%;
-    height: 50%;
-    border-radius: 30%;
-    background-color: var(--primary-color);
-    margin-right: -50px;
+
+
+.btns {
+    border-radius: 12px;
+    border: none;
+    padding: 6px;
+    box-shadow: var(--btn-shadow);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--trans-03);  
+    font-family: "poppins" ;
+    font-weight: 600;
+    outline: none;
 }
 
-.center-circle {
-    width: 50%;
-    height: 70%;
-    border-radius: 30%;
-    background-color: var(--secondnary-color);
-    padding: 5%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: var(--body-color);
-    z-index: 11;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.btns:disabled {
+   
+    pointer-events: none;
+    opacity: 0.7;
 }
 
-.right-circle {
-    width: 25%;
-    height: 50%;
-    border-radius: 30%;
-    background-color: var(--primary-color);
-    margin-left: -50px;
-
+.btns:disabled:active{
+    color: rgb(212, 212, 212);
+    outline: 1px solid rgb(255, 0, 0);
 }
 
-.total {
-    height: 40%;
-    width: 30%;
-    background-color: var(--primary-color);
-    padding: 5%;
-    border-radius: 30%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-}
-
-.pending {
-    height: 40%;
-    width: 30%;
-    background-color: var(--primary-color);
-    padding: 5%;
-    border-radius: 30%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-}
-
-.process {
-    height: 40%;
-    width: 30%;
-    background-color: var(--primary-color);
-    padding: 5%;
-    border-radius: 30%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-}
-
-.head{
-    width: 100%;
-    height: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.content{
-    width: 100%;
-    height: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.innerCard{
-    transition: 0.5s;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-}
-
-.innerCard:hover{
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-
+.btns:hover {
+    content: "verified Profile";
+    color: var(--primary-color);
 }
 
 

@@ -37,9 +37,9 @@
       <div class="list">
         <div *ngFor="let location of locations" class="lists">
           <div class="list-left">
-            <mat-icon style="color: var(--primary-color)">location_on</mat-icon>
-            <div>
-              <div style="color: var(--text-color)">{{ location.name }}</div>
+            <mat-icon style="color: var(--primary-color)" class="list-icon">location_on</mat-icon>
+            <div class="list-info">
+              <div  style="color: var(--text-color)">{{ location.name }}</div>
               <div style="color: var(--text-color); font-size: 10px">
                 {{ location.updated | date }}
               </div>
