@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   // path:'http://localhost:3000'
   // serverBaseUrl:'http://192.168.1.59:3000/'
-  serverBaseUrl:'https://8aa9-136-232-8-106.ngrok-free.app'
+  serverBaseUrl:'https://8aa9-136-232-8-106.ngrok-free.app/'
 
 };
 
